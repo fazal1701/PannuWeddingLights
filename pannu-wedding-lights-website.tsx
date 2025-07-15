@@ -47,7 +47,7 @@ const PannuWeddingLights = () => {
     const { name, value, type } = e.target
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? e.target.checked : value,
+      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }))
   }
 
@@ -104,7 +104,6 @@ const PannuWeddingLights = () => {
     {
       name: "Essentials",
       subtitle: "Perfect for Intimate Venues",
-      price: "$1,200",
       guests: "Ideal for 75-125 guests",
       popular: false,
       features: [
@@ -113,12 +112,11 @@ const PannuWeddingLights = () => {
         "Professional setup and takedown",
         "Event day monitoring included",
       ],
-      includes: ["Delivery within 50km of Toronto", "4-6 hour setup time", "Basic color programming"],
+      includes: ["Contact us for pricing and availability", "Email: pannuprabh7@icloud.com", "Professional Installation"],
     },
     {
       name: "Signature",
       subtitle: "Perfect for Most Venues",
-      price: "$2,400",
       guests: "Ideal for Most Venues",
       popular: true,
       features: [
@@ -129,12 +127,11 @@ const PannuWeddingLights = () => {
         "Professional photo area lighting",
         "Advanced color programming",
       ],
-      includes: ["Everything in Essentials", "Venue coordination included", "Custom lighting timeline"],
+      includes: ["Contact us for pricing and availability", "Email: pannuprabh7@icloud.com", "Full Service Setup"],
     },
     {
       name: "Luxury",
       subtitle: "For Grand Celebrations",
-      price: "$4,500",
       guests: "Spectacular for 200+ guests",
       popular: false,
       features: [
@@ -146,7 +143,7 @@ const PannuWeddingLights = () => {
         "Custom gobo projections",
         "Dedicated lighting technician",
       ],
-      includes: ["Everything in Signature", "3D design rendering", "Extended coverage area"],
+      includes: ["Contact us for pricing and availability", "Email: pannuprabh7@icloud.com", "Premium Service"],
     },
   ]
 
@@ -302,7 +299,6 @@ const PannuWeddingLights = () => {
         "Wall & Column Wrapping",
         "Weather-Resistant Outdoor Options",
       ],
-      price: "Min $250",
       icon: Sparkles,
       color: "bg-blue-50 border-blue-200",
     },
@@ -319,7 +315,6 @@ const PannuWeddingLights = () => {
         "Wireless Technology (No Cables)",
         "Professional DMX Control",
       ],
-      price: "$35/light",
       icon: Lightbulb,
       color: "bg-blue-50 border-blue-200",
     },
@@ -336,7 +331,6 @@ const PannuWeddingLights = () => {
         "Floral Arrangement Integration",
         "Certified Professional Rigging",
       ],
-      price: "$150-$450",
       icon: Star,
       color: "bg-blue-50 border-blue-200",
     },
@@ -353,7 +347,6 @@ const PannuWeddingLights = () => {
         "Professional Leveling & Safety",
         "Full Setup & Takedown Included",
       ],
-      price: "Full Service",
       icon: Music,
       color: "bg-blue-50 border-blue-200",
     },
@@ -370,7 +363,6 @@ const PannuWeddingLights = () => {
         "Ceremony Arch Framing",
         "Tent Interior & Perimeter",
       ],
-      price: "Per fixture",
       icon: TreePine,
       color: "bg-blue-50 border-blue-200",
     },
@@ -387,7 +379,6 @@ const PannuWeddingLights = () => {
         "Step-and-Repeat Standards",
         "Shadow Elimination Technology",
       ],
-      price: "Per area",
       icon: Camera,
       color: "bg-blue-50 border-blue-200",
     },
@@ -450,6 +441,13 @@ const PannuWeddingLights = () => {
               </a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">
                 Contact
+              </a>
+              <a
+                href="mailto:pannuprabh7@icloud.com"
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Email Us</span>
               </a>
               <a
                 href="tel:647-564-7656"
@@ -575,7 +573,6 @@ const PannuWeddingLights = () => {
                   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
                     Learn More
                   </button>
-                  <span className="text-blue-600 font-semibold text-sm">{service.price}</span>
                 </div>
               </div>
             ))}
@@ -635,7 +632,6 @@ const PannuWeddingLights = () => {
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
                   <p className="text-gray-600 mb-2">{pkg.subtitle}</p>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">{pkg.price}</div>
                   <p className="text-sm text-gray-500">{pkg.guests}</p>
                 </div>
 
@@ -679,7 +675,7 @@ const PannuWeddingLights = () => {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Installations</h3>
             <p className="text-gray-600 mb-6">
-              Need something completely unique? Our custom installations start at $6,000 and include fully personalized
+              Need something completely unique? Contact us to discuss your custom installation needs. We offer fully personalized
               lighting design, site-specific installations, and premium equipment.
             </p>
             <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
